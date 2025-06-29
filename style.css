@@ -1,0 +1,347 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #111;
+    color: #f0f0f0;
+  }
+  
+  /* --- HEADER --- */
+  header {
+    position: relative;
+    background: url('https://zov.one/YPBgF') no-repeat center/cover;
+    padding: 120px 20px 100px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.7) 100%);
+    z-index: 0;
+  }
+  
+  header h1 {
+    position: relative;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+    margin: 0;
+    line-height: 1.1;
+  }
+  
+  header p {
+    position: relative;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-top: 16px;
+    font-weight: 400;
+    color: #eee;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* --- ОБЩИЙ КОНТЕЙНЕР --- */
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* --- АНИМАЦИИ --- */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* --- ТЕКСТОВЫЙ БЛОК --- */
+  .text-block {
+    background: linear-gradient(145deg, #202020, #181818);
+    padding: 20px 25px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    line-height: 1.6;
+    color: #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .text-block p {
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .text-block p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  /* --- ФУТЕР --- */
+  footer {
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* --- ССЫЛКИ --- */
+  a {
+    color: #d4d4d4;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* --- АККОРДЕОН --- */
+  .accordion {
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .accordion-header {
+    background: #202020;
+    color: #f0f0f0;
+    padding: 10px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background: #2a2a2a;
+  }
+  
+  .accordion-icon {
+    font-size: 26px;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+  }
+  
+  .accordion-content.open {
+    opacity: 1;
+    max-height: 2000px;
+    margin-top: 12px;
+  }
+  
+  /* --- ФОТОГАЛЕРЕЯ --- */
+  .photos-wrapper {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 16px;
+  }
+  
+  .photos {
+    display: flex;
+    gap: 15px;
+    animation: scrollGallery 99999994s linear infinite;
+  }
+  
+  .photos:hover {
+    animation-play-state: paused;
+  }
+  
+  .photo-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #222;
+  }
+  
+  .photo-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #333;
+  }
+  
+  .photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(17,17,17,0.75);
+    color: #f0f0f0;
+    padding: 15px;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .photo-item:hover .photo-overlay {
+    opacity: 1;
+  }
+  
+  @keyframes scrollGallery {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-999999999%);
+    }
+  }
+  
+  /* --- FAQ --- */
+  .faq-block h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 10px 0 0;
+    font-size: 16px;
+    color: #afafaf;
+  }
+  
+  .faq-answer.open {
+    display: block;
+  }
+  
+  /* --- КАРТЫ --- */
+  .map-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* прижать к левому краю */
+    gap: 10px;
+  }
+  
+  .map {
+    width: 100%;
+    max-width: 590px;
+    height: auto;
+    border-radius: 12px;
+    border: none;
+  }
+  
+  /* --- АДАПТИВ --- */
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 90%;
+      margin: 30px auto;
+    }
+  
+    .map {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      padding: 80px 20px;
+    }
+  
+    header h1 {
+      font-size: clamp(24px, 5vw, 48px);
+    }
+  
+    header p {
+      font-size: clamp(14px, 3vw, 20px);
+    }
+  
+    .text-block {
+      padding: 15px 20px;
+    }
+  
+    .accordion-header {
+      padding: 10px 20px;
+    }
+  
+    .photos-wrapper {
+      margin-bottom: 30px;
+    }
+  
+    .photo-item {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+    }
+  
+    .photo-overlay {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .map {
+      height: 300px;
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .accordion-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .accordion-icon {
+      margin-left: 0;
+      margin-top: 8px;
+    }
+  
+    header h1 {
+      font-size: clamp(20px, 6vw, 36px);
+    }
+  
+    header p {
+      font-size: clamp(12px, 4vw, 16px);
+    }
+  
+    .photos {
+      gap: 10px;
+    }
+  
+    .photo-item {
+      max-width: 100%;
+    }
+  }
+  
