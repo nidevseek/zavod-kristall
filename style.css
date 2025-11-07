@@ -8,7 +8,7 @@ body {
   
   header {
     position: relative;
-    background: url('https://github.com/nidevseek/zavod-kristall/blob/main/baner.jpg') no-repeat center/cover;
+    background: url('https://github.com/nidevseek/zavod-kristall/blob/main/baner.jpg?raw=true') no-repeat center/cover;
     padding: 120px 20px 100px;
     text-align: center;
     color: #fff;
