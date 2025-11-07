@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="https://github.com/nidevseek/zavod-kristall/blob/main/avatar.png?raw=true" type="image/x-icon">
+  <link rel="icon" href="/avatar.png" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Завод Кристалл сайт">
 <meta name="keywords" content="Завод Кристалл Железногорск, Кристалл Железногорск, официальный сайт Завода Кристалл, продукция Кристалл, контакты Кристалл Железногорск, купить продукцию Кристалл, Кристалл Железногорск цены, производство Кристалл Железногорск, завод Железногорск Кристалл, каталог продукции Кристалл, адрес Кристалл Железногорск, телефон Завод Кристалл, официальный сайт Кристалл, отзывы о Кристалл Железногорск, Кристалл Железногорск продукция и цены, работа на Заводе Кристалл, вакансии Кристалл Железногорск, поставщик Кристалл, предприятие Кристалл, купить от завода Кристалл, производство в Железногорске, продукция от производителя Железногорск, заказать продукцию Кристалл, производство Железногорск официальный сайт">
@@ -156,7 +156,7 @@
       <div class="map-block">
         <h3>Территория сверху:</h3>
         <div class="map-row">
-          <img class="map" src="https://github.com/nidevseek/zavod-kristall/blob/main/mapa.jpg?raw=true">
+          <img class="map" src="/mapa.jpg">
         </div>
         
       </div>
@@ -196,6 +196,20 @@ window.addEventListener('DOMContentLoaded', () => {
     photos.innerHTML += clone;
     photos.dataset.cloned = 'true';
   }
+});
+
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+  const icon = header.querySelector('.accordion-icon');
+  content.classList.toggle('open');
+  icon.textContent = content.classList.contains('open') ? '−' : '+';
+}
+
+document.querySelectorAll('.faq-question').forEach(item => {
+  item.addEventListener('click', () => {
+    const answer = item.nextElementSibling;
+    answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+  });
 });
 
 const albums = {
